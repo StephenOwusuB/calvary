@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Securing Active Directory</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <h1>Securing Active Directory</h1>
+
+    <h2>Table of Contents</h2>
+    <ul>
+        <li><a href="#objectives">Objectives</a></li>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+		<li><a href="#Project walk-through">Project walk-through</a></li>
+        <li><a href="#skills-learned">Skills Learned</a></li>
+        <li><a href="#tools-used">Tools Used</a></li>
+        <li><a href="#acknowledgments">Acknowledgments</a></li>
+    </ul>
+
+    <h2 id="objectives">Objectives</h2>
+    <p>In this project, we will set up a secure Active Directory home lab environment using Oracle VirtualBox. This hands-on lab aims to enhance our understanding of securing an organization's Active Directory environment by implementing robust security measures, best practices, and automated scripts. Configuring and managing this lab significantly contributed to my knowledge of maintaining the security and integrity of Active Directory systems.</p>
+    <ul>
+        
+
+    <h2 id="prerequisites">Prerequisites</h2>
+    <p>To set up the environment for the Securing Active Directory project, you will need the following components:</p>
+    <ul>
+        <li><strong>Windows Server on VirtualBox</strong>
+            <ul>
+                <li>Download and install <a href="https://www.virtualbox.org/">VirtualBox</a>.</li>
+                <li>Create a new virtual machine and install a Windows Server operating system (e.g., Windows Server 2016 or later).</li>
+                <li>Configure the virtual machine with sufficient resources (CPU, RAM, disk space) to support Active Directory services.</li>
+            </ul>
+        </li>
+        <li><strong>Custom Domain from Namecheap</strong>
+            <ul>
+                <li>Purchase a custom domain from <a href="https://www.namecheap.com/">Namecheap</a>.</li>
+                <li>Configure DNS settings to point to your Windows Server running on VirtualBox.</li>
+                <li>Set up the domain to be used within your Active Directory environment.</li>
+            </ul>
+        </li>
+        <li><strong>PowerShell Modules</strong>
+            <ul>
+                <li>Ensure you have PowerShell installed on your Windows Server.</li>
+                <li>Install the necessary PowerShell modules for managing Active Directory. Open PowerShell and run the following commands:
+                    <pre><code>Install-Module -Name ActiveDirectory
+Install-Module -Name DNSClient
+Install-Module -Name PSWindowsUpdate</code></pre>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2 id="skills-learned">Skills Learned</h2>
+    <ul>
+        <li><strong>Active Directory Management</strong>: Learn how to set up, configure, and manage an Active Directory environment effectively.</li>
+        <li><strong>Security Best Practices</strong>: Understand and implement best practices for securing Active Directory and mitigating potential vulnerabilities.</li>
+        <li><strong>Automation Scripting</strong>: Gain proficiency in writing and using automated scripts to streamline AD management tasks.</li>
+        <li><strong>User and Group Management</strong>: Learn how to manage user accounts and groups within Active Directory securely.</li>
+        <li><strong>Backup and Recovery</strong>: Develop skills in implementing automated backup solutions to ensure data integrity and availability.</li>
+    </ul>
+
+    <h2 id="tools-used">Tools Used</h2>
+    <ul>
+        <li><strong>PowerShell</strong>: For writing automated scripts to manage and secure Active Directory.</li>
+        <li><strong>Active Directory Module</strong>: To perform various administrative tasks related to Active Directory.</li>
+        <li><strong>Git</strong>: For version control and collaboration.</li>
+        <li><strong>Visual Studio Code</strong>: As the primary code editor for writing and managing scripts.</li>
+        <li><strong>Markdown</strong>: For creating detailed documentation and guides.</li>
+    </ul>
+
+    <h2 id="acknowledgments">Acknowledgments</h2>
+    <p>Special thanks to all contributors and the community for their support and guidance. This project was inspired by various resources and projects in the cybersecurity and IT fields.</p>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Security</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        body {
+            font-family: Playfair Display, serif;
+        }
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        p {
+            font-size: 16px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Email Security</h1>
+
+    <h2>Table of Contents</h2>
+    <ul>
+        <li><a href="#objectives">Objectives</a></li>
+        <li><a href="#Languages and Utilities Used">Languages and Utilities</a></li>
+        <li><a href="#Environment">Environment</a></li>
+		<li><a href="#Project walk-through">Project walk-through</a></li>
+        <li><a href="#skills-learned">Skills Learned</a></li>
+        <li><a href="#Acknowledgments">Acknowledgments</a></li>
+    </ul>
+
+    <h2 id="objectives">Objectives</h2>
+    <p>In this project, we will set up a Business 365 email in Microsoft. This hands-on lab aims to enhance our understanding of setting up and securing an organization's email environment by implementing SPF, DKIM, and DMARC. Configuring and managing this lab has significantly contributed to my knowledge of maintaining a cloud-based email environment.</p>
+    <ul>
+
+        
+    <h2 id="Languages and Utilities Used">Languages and Utilities Used</h2>
+    <ul>
+            <li><strong>Git</strong>: For version control and collaboration.</li>
+            <li><strong>Visual Studio Code</strong>: As the primary code editor for writing and managing scripts.</li>
+            <li><strong>Markdown</strong>: For creating detailed documentation and guides.</li>
+        </ul>    
+
+    <h2 id="Environment">Environment</h2>
+    <p>To set up a business email environment and secure the business email, you will need the following components:</p>
+    <ul>
+        <li><strong>Microsoft business standard account</strong>
+            <ul>
+                <li>Sign up for a free Microsoft Business Account for 30 days <a href="https://www.microsoft.com/en-us/microsoft-365/business/microsoft-365-business-standard-one-month-trial">Microsoft Business Trial</a>.</li>
+                <li>Assign Microsoft Business Standard licnese to a user</li>
+            </ul>
+        </li>
+        <li><strong>Custom Domain from Namecheap</strong>
+            <ul>
+                <li>Purchase a custom domain from <a href="https://www.namecheap.com/">Namecheap</a>.</li>
+            </ul>
+            <li><strong>MXTOOLBOX</strong>
+                <ul>
+                    <li>Check for SPF and DMARC on <a href="https://mxtoolbox.com/">MXToolbox</a>.</li>
+                </ul>
+        </li>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2 id="Project Walk-Through">Project Walk-Through</h2>
+    <ul>
+    <p>Enroll in Microsoft 365 Business Standard for a complimentary 30-day trial.</p>
+    <div class="image-container">
+        <img src="images/M365 free.jpg" width="700" height="450" class="image">
+    <p>Add Microsoft Business standard license to a user</p>
+    <div class="image-container">
+        <img src="images/assign m365 business standard.png" width="600" height="550" class="image">
+    <p>Navigate to the Microsoft Admin Center and choose the 'Setup' option.</p>
+    <div class="image-container">
+        <img src="images/click on setup.jpg" width="600" height="550" class="image">
+    <p>Select get your custom domain set up</p>
+    <div class="image-container">
+        <img src="images/select get your custom domain setup.jpg" width="600" height="550" class="image">
+    <p>Click on get started to add your custom domain. If your domain has been added in Azure, it may appear as an incomplete domain. </p>
+    <div class="image-container">
+        <img src="images/setup custom domain for mail.png" width="600" height="550" class="image">
+    <p>If your custom domain is not visible, select 'Add Domain' to integrate it</p>
+    <div class="image-container">
+        <img src="images/click on add domain.png" width="300" height="250" class="image">
+    <p>Choose your preferred method for connecting your domain</p>
+    <div class="image-container">
+            <img src="images/add domain to your email setup.png" width="600" height="550" class="image">
+    <p>You should receive a page displaying the MX Record, TXT Record, and CNAME Record. Copy the three records and add them to your domain name registrar</p>
+    <div class="image-container">
+        <img src="images/add dns records in 365.png" width="600" height="550" class="image">
+    <p>Navigate to your domain registrar and create the three records you copied from Microsoft 365. Please note that the TXT record includes the SPF record. You may need to wait a few minutes (typically around 5 minutes) for the records to sync from your domain name registrar to Microsoft 365. Go back to Microsoft 365 and click on next and done to complete setup.</p>
+    <div class="image-container">
+            <img src="images/add dns records in domain registra.png" width="500" height="150" class="image">
+    <p>Refresh the page, and you should see the domain status change to 'Healthy'.</p>
+    <div class="image-container">
+            <img src="images/health status green check.png" width="600" height="550" class="image">
+    <p>Open your browser and navigate to www.mxtoolbox.com.Change the search type to 'SPF Lookup.' Enter your domain in the search bar, and your SPF record will be highlighted in green. The Sender Policy Framework(SPF) record informs email servers about the authorized mail servers for your domain. When you send an email, the recipient's email server performs an SPF check to verify the origin of the email
+    </p>
+    <div class="image-container">
+            <img src="images/verify spf was setup successfully .png" width="600" height="550" class="image">
+    <p>Proceed to set up DKIM. DKIM (DomainKeys Identified Mail) works with public and private key encryption to ensure the authenticity of email messages. It verifies that the content of the email has not been tampered with during transit. To set up DKIM, navigate to the Microsoft Admin Center and select 'Security' from the left panel.</p>
+    <div class="image-container">
+            <img src="images/click on security for DKIM.png" width="600" height="550" class="image">
+    <p>First, navigate to 'Email & Collaboration,' then select 'Policies & Rules,' followed by 'Threat Policies.</p>
+    <div class="image-container">
+            <img src="images/em-pr-tp.png" width="600" height="550" class="image">
+    <p>Navigate to 'Emaail authentication settings</p>
+    <div class="image-container">
+            <img src="images/threat polices-ea.png" width="600" height="550" class="image">
+    <p>Select 'DKIM' from the top tab and choose your custom domain. Click 'Create DKIM Keys.' A pop-up will appear with two host names. Copy the CNAME records and add them to your domain name registrar.</p>
+    <div class="image-container">
+            <img src="images/create DKIM keys.png" width="600" height="550" class="image">
+    <p>Allow a few minutes to pass before enabling the 'Sign messages for this domain with DKIM signatures' option. It is recommended to wait at least 5 minutes before enabling it to avoid encountering any errors. Enable signing after waiting a few minutes.To maintain optimal security, it is recommended to rotate your DKIM keys at least every six months. This can be done by returning to the same configuration location and updating the DKIM keys. In the event of a cyber attack or security breach, immediate rotation of the DKIM keys is imperative to mitigate risks and maintain email integrity. </p>
+    <div class="image-container">
+            <img src="images/successful enabled sign messages.png" width="600" height="550" class="image">
+    <p>DMARC is a security protocol that can be applied to your email system. It instructs recipient email servers on how to handle emails that claim to originate from your domain but lack proper DKIM and SPF authentication. DMARC can be configured to either permit or reject emails from an email server lacking a DKIM record. DMARC operates in 'none,' 'quarantine,' and 'reject' modes. Additionally, you can configure DKIM to send security reports to a specified email address, providing insights into DMARC's operational status.
+        Before configuring DMARC, ensure that both SPF and DKIM have been properly set up, as these are prerequisites. To configure DMARC, navigate to your domain registrar and create a TXT record. Allow some time for the changes to propagate, then verify if DMARC has been set up correctly.The recommended approach for DMARC configuration is to start with the 'none' policy, which monitors but doesn't take any action. After gaining confidence and ensuring everything is in order, transition to the 'quarantine' policy. Finally, move to the 'reject' policy to fully enforce DMARC, rejecting any emails that fail the authentication checks</p>
+    <div class="image-container">
+            <img src="images/successful email received.png" width="600" height="550" class="image">
+    
+
+    </ul>
+
+    <h2 id="skills-learned">Skills Learned</h2>
+    <ul>
+        <li><strong>Email Security Configuration</strong>: Gained hands-on experience in setting up SPF, DKIM, and DMARC to secure an organization's email environment.</li>
+        <li><strong>Domain Management:</strong>: Learned how to manage custom domains within Microsoft 365 and navigate domain registrars.</li>
+        <li><strong>Technical Documentation</strong>: Developed the ability to create clear and professional documentation for technical processes and configurations.</li>
+        <li><strong>Problem-Solving:</strong>: Enhanced your problem-solving skills by troubleshooting and resolving issues related to domain verification and email authentication.</li>
+        <li><strong>Cloud-Based Email Administration:</strong>: Improved your knowledge of administering and maintaining a cloud-based email environment.</li>
+    </ul>
+
+    
+    </ul>
+
+    <h2 id="acknowledgments">Acknowledgments</h2>
+    <p>Special thanks to all contributors and the community for their support and guidance. This project was inspired by various resources and projects in the cybersecurity and IT fields.</p>
+
+    <a href="index.html">Back to Home</a>
+
+</body>
+</html>
